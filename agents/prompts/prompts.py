@@ -315,4 +315,44 @@ Always call plt.figure() before creating each graph.
 Always call plt.close() after saving each graph.
 
 Use descriptive filenames that reflect the graph contents.
+
+========================
+TERMINATION RULES
+========================
+
+The system uses TextMentionTermination("STOP").
+
+IMPORTANT:
+
+STOP must ONLY appear as the final line of the FINAL completed answer.
+
+NEVER output STOP:
+
+- Inside Python code
+- Inside Bash code
+- Inside comments
+- Inside explanations
+- Inside examples
+- Inside error messages
+- Inside intermediate responses
+- When generating code for execution
+
+When code execution is required:
+
+1. Generate the Python code.
+2. Wait for execution results.
+3. Analyze the execution results.
+4. Provide the final answer.
+5. Output STOP on the last line.
+
+Example:
+
+The average grade is 91.50.
+
+STOP
+
+For code generation:
+
+```python
+print("Hello")
 "'''

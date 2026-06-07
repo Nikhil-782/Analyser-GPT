@@ -42,13 +42,12 @@ async def run_analyser_gpt(task,docker,model):
                         with st.chat_message("Data_Analyzer_agent", avatar="👩‍💻"):
                            st.markdown(message.content[:message.content.find("STOP")])
 
+
                 st.session_state.messages.append({
                     "type": "assistant",
                     "content": message,
                     "images": []
                 })
-
-
 
         st.session_state.autogen_team_state = await team.save_state()
     except Exception as e:
@@ -84,6 +83,7 @@ if task:
         if not os.path.exists(csv_path):
             with open(csv_path, "wb") as f:
                 f.write(file.getbuffer())
+
         docker = getDockerCommandLineCodeExecutor()
         model = get_model_client()
 
